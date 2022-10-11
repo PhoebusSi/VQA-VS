@@ -18,11 +18,13 @@ You can contact me by email **siqingyi@iie.ac.cn**, and I will send the complete
 Note that all OOD test sets are the subsets of the IID test set. Therefore, you can choose to predict the answers for the questions of each OOD test set seperately to get their test accuracy, or you can choose to predict the answers for the questions of the IID test set directly, and then collect the corresponding prediction results according to the question-id of each OOD test set to get their test accuracy.
 
 ### 2. Images of VQA-VS
-Note that our proposed benchmark is re-organized from VQA v2, therefore, you can directly download the images of VQA v2 or VQA-CP v2. Then you can map the images on the Training/Val/IID-Test/OOD-Test set according to their image-ids (annotated in the **-Ques.json** files).
+Note that our proposed benchmark is re-organized from VQA v2, therefore, you can directly download the images of VQA v2 or VQA-CP v2. Then you can map the images for the Training/Val/IID-Test/OOD-Test set according to their image-ids (annotated in the **-Ques.json** files).
 
 For simplicity, same as the practice for VQA v2 or VQA-CP v2, you can also download the image features (extracted by FasterRCNN) by:
-``wget -P https://imagecaption.blob.core.windows.net/imagecaption/trainval_36.zip
-unzip coco/trainval_36.zip -d image_features/''
+```
+wget -P https://imagecaption.blob.core.windows.net/imagecaption/trainval_36.zip
+unzip coco/trainval_36.zip -d image_features/
+```
 
 
 
