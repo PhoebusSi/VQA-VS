@@ -65,3 +65,6 @@ Table 2: Comparison of our benchmark and VQA-CP v2. The results are computed ove
 ![image](https://github.com/PhoebusSi/VQA-VS/blob/main/figures/sotas.jpg)
 Table 3: Performance of SoTA debiasing methods.
 
+
+## Reference
+coming soon!
