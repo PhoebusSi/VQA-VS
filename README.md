@@ -2,7 +2,15 @@
 
 Here is the data and implementation of our Findings of EMNLP-2022 [Language Prior Is Not the Only Shortcut: A Benchmark for Shortcut Learning in VQA](https://arxiv.org/abs/2210.04692).
 
-## The data will be released soon! (in two weeks)
+## Download the data.
+### Approach 1: Google Drive
+You can download the data from [**GoogleDrive**](https://drive.google.com/drive/folders/1i6xqke5X5GoQ8YGoNcs3rtMsDtgs4OLG?usp=sharing).
+
+### Approach 2: Zip Compressed File
+You can download the compressed files from the **data** folder according to its dir structure, and extract them separately.
+
+### Approach 3: Contact me
+You can contact me by email **siqingyi@iie.ac.cn**, and I will send the complete dataset to you.
 
 ## Motivation of our benchmark.
 ![image](https://github.com/PhoebusSi/VQA-VS/blob/main/figures/motivations.jpg)
