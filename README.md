@@ -2,6 +2,7 @@
 
 Here is the implementation of our Findings of EMNLP-2022 [Language Prior Is Not the Only Shortcut: A Benchmark for Shortcut Learning in VQA](https://arxiv.org/abs/2210.04692).
 
+## The data will be released soon! (in two weeks)
 
 ## Motivation of our benchmark.
 ![image](https://github.com/PhoebusSi/VQA-VS/blob/main/figures/motivations.jpg)
