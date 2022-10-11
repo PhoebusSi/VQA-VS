@@ -1,6 +1,6 @@
 # VQA-VS (Language Prior Is Not the Only Shortcut: A Benchmark for Shortcut Learning in VQA)
 
-Here is the implementation of our Findings of EMNLP-2022 [Language Prior Is Not the Only Shortcut: A Benchmark for Shortcut Learning in VQA](https://arxiv.org/abs/2210.04692).
+Here is the data and implementation of our Findings of EMNLP-2022 [Language Prior Is Not the Only Shortcut: A Benchmark for Shortcut Learning in VQA](https://arxiv.org/abs/2210.04692).
 
 ## The data will be released soon! (in two weeks)
 
