@@ -70,4 +70,12 @@ Table 3: Performance of SoTA debiasing methods.
 
 
 ## Reference
-coming soon!
+```
+@article{Si2022LanguagePI,
+  title={Language Prior Is Not the Only Shortcut: A Benchmark for Shortcut Learning in VQA},
+  author={Qingyi Si and Fandong Meng and Mingyu Zheng and Zheng Lin and Yuanxin Liu and Peng Fu and Yanan Cao and Weiping Wang and Jie Zhou},
+  journal={ArXiv},
+  year={2022},
+  volume={abs/2210.04692}
+}
+```
