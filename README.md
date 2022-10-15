@@ -14,21 +14,47 @@ You can download the compressed files from the **data** folder according to its 
 ### Approach 3: Contact me
 You can contact me by email **siqingyi@iie.ac.cn**, and I will send the complete dataset to you.
 
-
-## Matters needing attention.
-### 1. Inference and Test
-Note that all OOD test sets are the subsets of the IID test set. Therefore, you can choose to predict the answers for the questions of each OOD test set seperately to get their test accuracy, or you can choose to predict the answers for the questions of the IID test set directly, and then collect the corresponding prediction results according to the question-id of each OOD test set to get their test accuracy.
-
-### 2. Images of VQA-VS
+## Data Preprocess.
+### 1. Images of VQA-VS
 Note that our proposed benchmark is re-organized from VQA v2, therefore, the images in the VQA-CP v1 and v2 datasets (both train and test) are from [training](http://images.cocodataset.org/zips/train2014.zip) and [validation](http://images.cocodataset.org/zips/val2014.zip) sets of the COCO dataset. 
 Then you can map the images for the Training/Val/IID-Test/OOD-Test set according to their image-ids (annotated in the **-Ques.json** files).
 
 For simplicity, same as the practice for VQA v2 or VQA-CP v2, you can also download the image features (extracted by FasterRCNN) by:
 ```
 wget -P https://imagecaption.blob.core.windows.net/imagecaption/trainval_36.zip
+(Alternate Link) wget -P https://storage.googleapis.com/up-down-attention/trainval_36.zip
 unzip coco/trainval_36.zip -d image_features/
 ```
+### 2. Preprocess the image features
+```
+python3 tsv2feature.py
+```
+### 3. (Optionally) Preprocess the text data
+```
+python3 preprocess_text.py
+```
+This step is neccessary if you use the framework we released.
 
+## Training.
+```
+python3 main_LXM.py
+```
+The model which performs best on val dataset will be saved in the "saved_models" folder.
+
+## Test and compute scores.
+### Test instructions
+```
+python3 test_LXM.py
+```
+The JSON file of your predictions on test set is saved in the "saved_models" folder.
+
+Note that all OOD test sets are the subsets of the IID test set. Therefore, you can choose to predict the answers for the questions of each OOD test set seperately to get their test accuracy, or you can choose to predict the answers for the questions of the IID test set directly (**highly recommended**), and then collect the corresponding prediction results according to the question-id of each OOD test set to get their test accuracy. 
+
+### Compute scores
+```
+python3 compute_scores.py
+```
+This instruction can obtain the scores of IID test set and nine OOD test sets st the same time. You only need to pass in the predictions on IID test set. 
 
 
 
