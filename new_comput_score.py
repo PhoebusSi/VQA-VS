@@ -168,8 +168,8 @@ if __name__ == '__main__':
 	print('Final_Score: average score on all OOD test sets\t',  (QT_score+KW_score+KWP_score+QTKW_score+KO_score+KOP_score+QTKO_score+KWKO_score+QTKWKO_score)/9)
 	print('sub-metric 1: IID score', iid_score)
 	print('sub-metric 2: average OOD score on language-based modality sets', (QT_score+KW_score+KWP_score+QTKW_score)/4)
-	print('sub-metric 3: average OOD score on visual-based modality sets', (KO_score+KOP_score)/4)
-	print('sub-metric 4: average OOD score on cross-modality sets', (QTKO_score+KWKO_score+QTKWKO_score)/4)
+	print('sub-metric 3: average OOD score on visual-based modality sets', (KO_score+KOP_score)/2)
+	print('sub-metric 4: average OOD score on cross-modality sets', (QTKO_score+KWKO_score+QTKWKO_score)/3)
 
 
 
