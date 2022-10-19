@@ -32,18 +32,18 @@ python3 tsv2feature.py
 
 
 ## Reimplementations of the Baseline Framework.
-### Preprocess the text data.
+### 1. Preprocess the text data.
 ```
 python3 preprocess_text.py
 ```
 This step is neccessary if you use the framework we released.
-### Training.
+### 2. Training.
 ```
 python3 main_LXM.py
 ```
 The model which performs best on val dataset will be saved in the "saved_models" folder.
 
-### Test and compute scores.
+### 3. Test and compute scores.
 #### Test instructions
 ```
 python3 test_LXM.py
@@ -61,7 +61,7 @@ This instruction can obtain the scores of IID test set and nine OOD test sets st
 python3 new_compute_scores.py
 ```
 We collected all the annotations needed for calculating the scores and packed them into *test_annotations.json* file. You can also get all the scores through this command.
-### Limitations of the baseline framework.
+### 4. Limitations of the baseline framework.
 Most current VQA methods regard VQA as a classification task, which is based on an assumption that most test answers have encountered in the training set.
 Therefore, classification-fashion VQA methods have no zero-shot ability, and are invalid  for the questiosns whose ground thruth answers do not exist in the prediction space of training set. 
 
@@ -79,7 +79,7 @@ If you have the predictions for test set, you can compute scores as the function
 ```
 def cal_acc_multi(ground_truth, preds):
 ##ground_truth: [[a_1^1, a_1^2, ..., a_1^{10}], ..., [a_{64}^1, a_{64}^2, ..., a_{64}^{10}]] 
-##preds: [p_1, p_2, ..., p_64] 
+##preds: [p_1, p_2, ..., p_{64}] 
     all_num = len(ground_truth)
     acc_num = 0
     temp = []
