@@ -61,7 +61,13 @@ This instruction can obtain the scores of IID test set and nine OOD test sets st
 python3 new_compute_scores.py
 ```
 We collected all the annotations needed for calculating the scores and packed them into *test_annotations.json* file. You can also get all the scores through this command.
+### Limitations of the baseline framework.
+Most current VQA methods regard VQA as a classification task, which is based on an assumption that most test answers have encountered in the training set.
+Therefore, classification-fashion VQA methods have no zero-shot ability, and are invalid  for the questiosns whose ground thruth answers do not exist in the prediction space of training set. 
 
+Recently, the VQA methods based on generative models demostrate certain zero-shot ability. We thus do no encourgae the generative-fashion VQA methods to use our scripts for test and score computing, because they directly judge the predicted answers that did  not appear in the training as to be wrong. 
+
+If your method is based on generative model, e.g., OFA, you can dirct use the following evaluation metric to compute scores. 
 
 ## Metrics.
 We use the common VQA evaluation metric: 
