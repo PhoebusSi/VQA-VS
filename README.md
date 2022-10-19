@@ -29,20 +29,21 @@ unzip coco/trainval_36.zip -d image_features/
 ```
 python3 tsv2feature.py
 ```
-### 3. (Optionally) Preprocess the text data
+### 3. (Optionally) Preprocess the text data (Used for the Reimplementations of Baseline Framework)
 ```
 python3 preprocess_text.py
 ```
 This step is neccessary if you use the framework we released.
 
-## Training.
+## Reimplementations of the Baseline Framework.
+### Training.
 ```
 python3 main_LXM.py
 ```
 The model which performs best on val dataset will be saved in the "saved_models" folder.
 
-## Test and compute scores.
-### Test instructions
+### Test and compute scores.
+#### Test instructions
 ```
 python3 test_LXM.py
 ```
@@ -50,13 +51,45 @@ The JSON file of your predictions on test set is saved in the "saved_models" fol
 
 Note that all OOD test sets are the subsets of the IID test set. Therefore, you can choose to predict the answers for the questions of each OOD test set seperately to get their test accuracy, or you can choose to predict the answers for the questions of the IID test set directly (**highly recommended**), and then collect the corresponding prediction results according to the question-id of each OOD test set to get their test accuracy. 
 
-### Compute scores
+#### Compute scores
 ```
 python3 compute_scores.py
 ```
 This instruction can obtain the scores of IID test set and nine OOD test sets st the same time. You only need to pass in the predictions on IID test set. 
+```
+python3 new_compute_scores.py
+```
+We collected all the annotations needed for calculating the scores and packed them into *test_annotations.json* file. You can also get all the scores through this command.
 
 
+## Metrics.
+We use the common VQA evaluation metric: 
+、、、
+acc=min(#humans that provided that answer/3, 1),
+、、、
+i.e., an answer is deemed 100% accurate if at least 3 annotators provided that exact answer.
+If you have the predictions for test set, you can compute scores as the function:
+```
+def cal_acc_multi(ground_truth, preds):
+##ground_truth: [[a_1^1, a_1^2, ..., a_1^{10}], ..., [a_{64}^1, a_{64}^2, ..., a_{64}^{10}]] 
+##preds: [p_1, p_2, ..., p_64] 
+    all_num = len(ground_truth)
+    acc_num = 0
+    temp = []
+    for i, answer_id in enumerate(ground_truth):
+        pred = preds[i]
+        cnt = 0
+        for aid in answer_id:
+            if pred == aid:
+                cnt += 1
+        if cnt ==1:
+            acc_num += 1/3
+        elif cnt == 2:
+            acc_num += 2/3
+        elif cnt > 2:
+            acc_num += 1
+        return acc_num/all_num
+```
 
 ## Motivation of our benchmark.
 ![image](https://github.com/PhoebusSi/VQA-VS/blob/main/figures/motivations.jpg)
