@@ -29,13 +29,14 @@ unzip coco/trainval_36.zip -d image_features/
 ```
 python3 tsv2feature.py
 ```
-### 3. (Optionally) Preprocess the text data (Used for the Reimplementations of Baseline Framework)
+
+
+## Reimplementations of the Baseline Framework.
+### Preprocess the text data.
 ```
 python3 preprocess_text.py
 ```
 This step is neccessary if you use the framework we released.
-
-## Reimplementations of the Baseline Framework.
 ### Training.
 ```
 python3 main_LXM.py
